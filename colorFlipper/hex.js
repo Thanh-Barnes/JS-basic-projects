@@ -1,0 +1,22 @@
+const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+
+//#f15025
+
+const btn = document.querySelector('#btn')
+const color = document.querySelector('.color')
+
+btn.addEventListener('click', () => {
+    let hexColor = '#';
+
+    // loop to run 6 times eg #F15025 -> 6 letter/numbers
+
+    for (let i = 0; i < 6; i++) {
+        hexColor  += hex[getRandomNumber()]
+    }
+    color.textContent = hexColor
+    document.body.style.backgroundColor = hexColor;
+})
+
+getRandomNumber = () => {
+    return Math.floor(Math.random() * hex.length);
+}
